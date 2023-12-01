@@ -8,7 +8,7 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
   protected double myXspeed, myYspeed; //holds the speed of travel in the x and y directions   
   protected double myPointDirection; //holds current direction the ship is pointing in degrees    
 
-  //Accelerates the floater in the direction it is pointing (myPointDirection)   
+    //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount)   
   {          
     //convert the current direction the floater is pointing to radians    
@@ -17,11 +17,13 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
     myXspeed += ((dAmount) * Math.cos(dRadians));    
     myYspeed += ((dAmount) * Math.sin(dRadians));       
   }   
+  
   public void turn (double degreesOfRotation)   
   {     
     //rotates the floater by a given number of degrees    
     myPointDirection+=degreesOfRotation;   
   }   
+  
   public void move ()   //move the floater in the current direction of travel
   {      
     //change the x and y coordinates by myXspeed and myYspeed       
@@ -29,28 +31,29 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
     myCenterY += myYspeed;     
 
     //wrap around screen    
-    if(myCenterX >width)
+    if(myCenterX > width+50)
     {     
-      myCenterX = 0;    
+      myCenterX = -50;    
     }    
-    else if (myCenterX<0)
+    else if (myCenterX<-50)
     {     
-      myCenterX = width;    
+      myCenterX = width+50;    
     }    
-    if(myCenterY >height)
+    if(myCenterY >height+50)
     {    
-      myCenterY = 0;    
+      myCenterY = -50;    
     } 
     
-    else if (myCenterY < 0)
+    else if (myCenterY < -50)
     {     
-      myCenterY = height;    
+      myCenterY = height+50;    
     }   
   }   
+  
   public void show ()  //Draws the floater at the current position  
   {             
     fill(myColor);   
-    stroke(myColor);    
+    stroke(0);    
     
     //translate the (x,y) center of the ship to the correct position
     translate((float)myCenterX, (float)myCenterY);
