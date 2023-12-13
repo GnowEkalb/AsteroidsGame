@@ -43,7 +43,6 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
     {    
       myCenterY = -50;    
     } 
-    
     else if (myCenterY < -50)
     {     
       myCenterY = height+50;    
