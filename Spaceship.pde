@@ -48,4 +48,28 @@ class ship extends Floater {
   public double getCenterY(){
     return myCenterY;
   }
+  public double getXspeed(){
+    return myXspeed;
+  }
+  public double getYspeed(){
+    return myYspeed;
+  }  
+  public double getPointDirection(){
+    return myPointDirection;
+  }
+  public void setCenterX(double n){
+    myCenterX = n;
+  }
+  public void setCenterY(double n){
+    myCenterY = n;
+  }
+  public void setXspeed(double n){
+    myXspeed = n;
+  }
+  public void setYspeed(double n){
+    myYspeed = n;
+  }
+  public void setPointDirection(double n){
+    myPointDirection = n;
+  }
 }
